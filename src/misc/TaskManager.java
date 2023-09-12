@@ -2,6 +2,8 @@ package misc;
 
 import com.epicbot.api.shared.APIContext;
 import lombok.Getter;
+import skills.Fishing;
+import skills.Woodcutting;
 
 import java.util.ArrayList;
 
@@ -78,7 +80,8 @@ public class TaskManager {
 
     //preparing the tasks
     private static void prepareFishingTask() {
-        skills.Fishing.prepareFishingTask(ctx);
+        Fishing fishing = new Fishing();
+        fishing.prepareFishingTask(ctx);
     }
 
     private static void prepareMiningTask() {
@@ -86,7 +89,8 @@ public class TaskManager {
     }
 
     private static void prepareWoodcuttingTask() {
-        skills.Woodcutting.prepareWoodcuttingTask(ctx);
+        Woodcutting woodcutting = new Woodcutting();
+        woodcutting.prepareWoodcuttingTask(ctx);
     }
 
     private static void prepareSmithingTask() {
@@ -95,7 +99,8 @@ public class TaskManager {
 
     //executing the tasks
     private static void executeFishingTask() {
-        skills.Fishing.doFishingTask(ctx);
+        Fishing fishing = new Fishing();
+        fishing.doFishingTask(ctx);
     }
 
     private static void executeMiningTask() {
@@ -103,7 +108,8 @@ public class TaskManager {
     }
 
     private static void executeWoodcuttingTask() {
-        skills.Woodcutting.doWoodcuttingTask(ctx);
+        Woodcutting woodcutting = new Woodcutting();
+        woodcutting.doWoodcuttingTask(ctx);
     }
 
     private static void executeSmithingTask() {

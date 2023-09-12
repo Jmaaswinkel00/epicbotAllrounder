@@ -7,10 +7,10 @@ import com.epicbot.api.shared.query.NPCQueryBuilder;
 import misc.*;
 
 public class Fishing {
-    private static final NPCQueryBuilder fishingSpot = APIContext.get().npcs().query();
-    private static final Area fishingSpotArea = PathManager.fishingSpot;
+    private final NPCQueryBuilder fishingSpot = APIContext.get().npcs().query();
+    private final Area fishingSpotArea = PathManager.fishingSpot;
 
-    public static void doFishingTask(APIContext ctx) {
+    public void doFishingTask(APIContext ctx) {
         if(InventoryManager.isInventoryFull() && InventoryManager.onlyContainsRightEquipment("Small fishing net")) {
             if(PlayerManager.isNotAtBank(ctx)) {
                 PathManager.walkToLumbridgeBank(ctx);
@@ -38,11 +38,11 @@ public class Fishing {
         }
     }
 
-    public static void prepareFishingTask(APIContext ctx) {
+    public void prepareFishingTask(APIContext ctx) {
 
     }
 
-    public static boolean isNearFishingSpot(APIContext ctx) {
+    public boolean isNearFishingSpot(APIContext ctx) {
         if(fishingSpotArea.contains(ctx.localPlayer().getLocation()) || !fishingSpot.named("Fishing spot").results().isEmpty()) {
             return true;
         }
@@ -50,7 +50,7 @@ public class Fishing {
         return false;
     }
 
-    public static boolean isAtFishingSpot(APIContext ctx) {
+    public boolean isAtFishingSpot(APIContext ctx) {
         return false;
     }
 }

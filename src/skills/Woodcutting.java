@@ -11,9 +11,9 @@ import misc.*;
 import java.nio.file.Path;
 
 public class Woodcutting {
-    private static SceneObject tree = APIContext.get().objects().query().named("Oak tree").results().nearest();
-    private static final Area woodcuttingArea = PathManager.treeOakSpot;
-    public static void doWoodcuttingTask(APIContext ctx) {
+    private SceneObject tree = APIContext.get().objects().query().named("Oak tree").results().nearest();
+    private final Area woodcuttingArea = PathManager.treeOakSpot;
+    public void doWoodcuttingTask(APIContext ctx) {
 
         if(InventoryManager.isInventoryFull()) {
             if(PlayerManager.isNotAtBank(ctx)) {
@@ -43,7 +43,7 @@ public class Woodcutting {
         }
     }
 
-    public static void prepareWoodcuttingTask(APIContext ctx) {
+    public void prepareWoodcuttingTask(APIContext ctx) {
         if (!InventoryManager.hasWoodcuttingEquipmentInventory()) {
 
             if (PlayerManager.isNotAtBank(ctx)) {
@@ -76,7 +76,7 @@ public class Woodcutting {
         }
     }
 
-    private static boolean isInWoodcuttingArea(APIContext ctx) {
+    private boolean isInWoodcuttingArea(APIContext ctx) {
         return woodcuttingArea.contains(ctx.localPlayer().getLocation());
     }
 }
