@@ -11,26 +11,25 @@ import misc.*;
 import java.nio.file.Path;
 
 public class Woodcutting {
-    private SceneObject tree = APIContext.get().objects().query().named("Oak tree").results().nearest();
     private final Area woodcuttingArea = PathManager.treeOakSpot;
+    private final String axe = "Bronze axe";
     public void doWoodcuttingTask(APIContext ctx) {
 
         if(InventoryManager.isInventoryFull()) {
             if(PlayerManager.isNotAtBank(ctx)) {
                 PathManager.walkToNearestBank(ctx);
             } else {
-                BankManager.depositALlExceptItem(ctx, "Bronze axe");
+                BankManager.depositALlExceptItem(ctx, axe);
             }
         } else {
-            if(!InventoryManager.hasWoodcuttingEquipmentInventory()) {
+            if(!InventoryManager.hasWoodcuttingEquipmentInventory(axe)) {
                 if(PlayerManager.isNotAtBank(ctx)) {
                     PathManager.walkToNearestBank(ctx);
                 } else {
-                    BankManager.withdrawItem(ctx, "Bronze axe");
+                    BankManager.withdrawItem(ctx, axe);
                 }
             }
             if(!isInWoodcuttingArea(ctx)) {
-                System.out.println("lopen");
                 PathManager.walkToPath(ctx, woodcuttingArea.getRandomTile());
             }
             if(!PlayerManager.isInteracting() && !PlayerManager.isWalking()) {
@@ -44,28 +43,25 @@ public class Woodcutting {
     }
 
     public void prepareWoodcuttingTask(APIContext ctx) {
-        if (!InventoryManager.hasWoodcuttingEquipmentInventory()) {
-
+        if (!InventoryManager.hasWoodcuttingEquipmentInventory(axe)) {
             if (PlayerManager.isNotAtBank(ctx)) {
                 PathManager.walkToNearestBank(ctx);
             }
             if(!BankManager.isBankOpen(ctx)) {
                 BankManager.openBank(ctx);
             }
-            BankManager.withdrawItem(ctx, "Bronze axe");
-
+            BankManager.withdrawItem(ctx, axe);
         }
 
-        if(!InventoryManager.isInventoryEmptyExcept("Bronze axe")) {
+        if(!InventoryManager.isInventoryEmptyExcept(axe)) {
             if (PlayerManager.isNotAtBank(ctx)) {
                 PathManager.walkToNearestBank(ctx);
             }
             if(!BankManager.isBankOpen(ctx)) {
-                System.out.println("test");
                 BankManager.openBank(ctx);
             }
             while (ctx.bank().isOpen()) {
-                BankManager.depositALlExceptItem(ctx, "Bronze axe");
+                BankManager.depositALlExceptItem(ctx, axe);
                 Time.sleep(1200, 2400);
                 if (InventoryManager.isInventoryEmpty()) {
                     if (BankManager.closeBank(ctx)) {

@@ -26,14 +26,13 @@ public class BankManager {
             if(ctx.bank().isOpen()) {
                ctx.bank().depositInventory();
             }
-
         }
     }
 
     public static void withdrawItem(APIContext ctx, String item) {
         banker.interact("Bank");
 
-        if(ctx.bank().isOpen() && hasEquipmentInBank(ctx, item)) {
+        if(ctx.bank().isOpen() && hasItemsInBank(ctx, item)) {
             ctx.bank().withdraw(1, item);
         }
         if(InventoryManager.hasFishingEquipmentInventory() && ctx.bank().isOpen()) {
@@ -58,8 +57,8 @@ public class BankManager {
     public static boolean isBankOpen(APIContext ctx) {
         return ctx.bank().isOpen();
     }
-    private static boolean hasEquipmentInBank(APIContext ctx, String item) {
-        return ctx.bank().contains(item);
+    private static boolean hasItemsInBank(APIContext ctx, String... items) {
+        return ctx.bank().contains(items);
     }
 
 }

@@ -10,16 +10,16 @@ public class InventoryManager {
         return inventory.isFull();
     }
 
-    public static boolean onlyContainsRightEquipment(String item) {
+    public static boolean onlyContainsRightEquipment(String... item) {
         return inventory.onlyContains(item);
     }
 
-    public static boolean hasFishingEquipmentInventory() {
-        return inventory.contains("Small fishing net");
+    public static boolean hasFishingEquipmentInventory(String... item) {
+        return inventory.contains(item);
     }
 
-    public static boolean hasWoodcuttingEquipmentInventory() {
-        return inventory.contains("Bronze axe");
+    public static boolean hasWoodcuttingEquipmentInventory(String axe) {
+        return inventory.contains(axe);
     }
 
     public static boolean isInventoryEmpty() {
