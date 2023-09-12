@@ -1,0 +1,52 @@
+{
+  "skills": {
+    "fishing": {
+      "1": {
+        "type": "net fishing",
+        "equipment": "Small fishing net",
+        "bait": null
+      },
+      "20": {
+        "type": "fly fishing",
+        "equipment": "Fly fishing rod",
+        "bait": "feathers"
+      }
+    },
+    "woodcutting": {
+      "1": {
+        "type": "woodcutting",
+        "equipment": "Bronze axe"
+      },
+      "10": {
+        "type": "woodcutting",
+        "equipment": "Bronze axe"
+      },
+      "20": {
+        "type": "woodcutting",
+        "equipment": "Mithril axe"
+      },
+      "30": {
+        "type": "woodcutting",
+        "equipment": "Adamant axe"
+      }
+    },
+    "mining": {
+      "1": {
+        "type": "mining",
+        "equipment": "Bronze pickaxe"
+      },
+      "10": {
+        "type": "mining",
+        "equipment": "Bronze pickaxe"
+      },
+      "20": {
+        "type": "mining",
+        "equipment": "Mithril pickaxe"
+      },
+      "30": {
+        "type": "mining",
+        "equipment": "Adamant pickaxe"
+      }
+    }
+  }
+}

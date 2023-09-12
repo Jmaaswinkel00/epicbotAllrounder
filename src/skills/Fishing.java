@@ -10,7 +10,7 @@ import misc.*;
 public class Fishing {
     private final NPCQueryBuilder fishingSpot = APIContext.get().npcs().query();
     private final Area fishingSpotArea = PathManager.fishingSpot;
-    private String fishingTool = "Small fishing net";
+    private final String fishingTool = "Small fishing net";
 
     public void doFishingTask(APIContext ctx) {
         if(InventoryManager.isInventoryFull() && InventoryManager.onlyContainsRightEquipment(fishingTool)) {

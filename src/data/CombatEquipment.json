@@ -1,0 +1,47 @@
+{
+  "melee": {
+    "1": {
+      "mainWeapon": "",
+      "offHand": "",
+      "helmet": "",
+      "chest": "",
+      "legs": "",
+      "boots": "",
+      "gloves": "",
+      "cloak": "",
+      "ring": "",
+      "amulet": "",
+      "quiver": ""
+    }
+  },
+  "ranged": {
+    "1": {
+      "mainWeapon": "",
+      "offHand": "",
+      "helmet": "",
+      "chest": "",
+      "legs": "",
+      "boots": "",
+      "gloves": "",
+      "cloak": "",
+      "ring": "",
+      "amulet": "",
+      "quiver": ""
+    }
+  },
+  "magic": {
+    "1": {
+      "mainWeapon": "",
+      "offHand": "",
+      "helmet": "",
+      "chest": "",
+      "legs": "",
+      "boots": "",
+      "gloves": "",
+      "cloak": "",
+      "ring": "",
+      "amulet": "",
+      "quiver": ""
+    }
+  }
+}
